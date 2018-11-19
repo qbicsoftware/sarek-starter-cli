@@ -16,6 +16,11 @@ for example using [qPostman](https://github.com/qbicsoftware/postman-cli).
   columns: Experiment, Project, Code, Additional information.
   
 ## Usage
+Load the conda package or your favourite python package manager (python 2.7 and pandas package is required). E.g. in new CFC cluster:
+
+```
+module load qbic/anaconda2/2.1.0
+```
 
 Execute without arguments or with -h to get an overview of the options:
 ```
@@ -23,7 +28,7 @@ Execute without arguments or with -h to get an overview of the options:
 
 usage: Sarek_pipeline_input.py [-h] [-p PATH] [-c {Test,Secondary_name}]
                                [-pR1 PATTERN_R1] [-pR2 PATTERN_R2]
-                               [-pL PATTERN_LANE] [-f FILENAME]
+                               [-pL PATTERN_LANE] [-m]
                                project sample_tsv experiment_tsv
 
 positional arguments:
@@ -50,6 +55,6 @@ optional arguments:
   -pL PATTERN_LANE, --pattern_lane PATTERN_LANE
                         Regex to look for at fastqfilename to
                         identifysequencing lane.
-  -f FILENAME, --filename FILENAME
-                        File name for Sarek input table.
+  -m, --multiple        Create a separate input file for each entity/patient.
+
 ```
